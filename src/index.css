@@ -1,0 +1,7 @@
+@import '../node_modules/materialize-css/dist/css/materialize.css';
+@import '//fonts.googleapis.com/icon?family=Material+Icons';
+@import '../node_modules/materialize-css/dist/css/materialize.css';
+
+@import './components/MenuComponent.story.css';
+@import './components/OrderFormComponent.story.css';
+@import './components/OrderTableComponent.story.css';

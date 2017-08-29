@@ -2,25 +2,28 @@ import React from 'react';
 
 export default function OrderPageLayout(props) {
   //
+
   console.log(props.children);
   return (
     <div className="OrderPageLayout">
-      <nav className="blue">
-        <div className="nav-wrapper">
-          <a href="index.html" className="brand-logo">
-            Galvanize Delivers
-          </a>
-          <ul className="right hide-on-med-and-down">
-            <li className="active">
-              <a href="order.html">Order Delivery</a>
-            </li>
-          </ul>
+      <header id="pageHeader" className="navbar-fixed">
+        <nav className="blue">
+          <div className="nav-wrapper">
+            <a href="index.html" className="brand-logo">
+              Galvanize Delivers
+            </a>
+            <ul className="right hide-on-med-and-down">
+              <li className="active">
+                <a href="order.html">Order Delivery</a>
+              </li>
+            </ul>
 
-          <a href="order.html" data-activates="nav-mobile" className="button-collapse">
-            <i className="material-icons">menu</i>
-          </a>
-        </div>
-      </nav>
+            <a href="order.html" data-activates="nav-mobile" className="button-collapse">
+              <i className="material-icons">menu</i>
+            </a>
+          </div>
+        </nav>
+      </header>
 
       <main id="pageContent">
         <div className="container">

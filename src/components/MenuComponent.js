@@ -3,11 +3,20 @@ import MenuItemComponent from './MenuItemComponent';
 
 import './MenuComponent.story.css';
 
-export default function MenuComponent({ items }) {
+export default function MenuComponent({ items, onAddItem }) {
   //
+
   return (
-    <div className="MenuComponent">
-      {items.map(item => <MenuItemComponent key={item.id} item={item} />)}
+    <div className="menuItems MenuComponent">
+      {items.map((
+        item //
+      ) =>
+        <MenuItemComponent
+          key={item.id} //
+          item={item} //
+          onAddItem={onAddItem}
+        />
+      )}
     </div>
   );
 }

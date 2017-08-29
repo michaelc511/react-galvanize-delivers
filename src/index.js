@@ -13,57 +13,86 @@ import OrderPage from './components/OrderPage';
 let menuItems = [
   {
     id: 1,
-    name: 'Some Item A',
+    name: 'Burger N Fries',
     price: 9.99,
-    imagePath: '//via.placeholder.com/300x200'
+    imagePath: 'http://localhost:3000/images/burger.jpg'
+    // imagePath: '//via.placeholder.com/300x200'
   },
   {
     id: 2,
-    name: 'Some Item B',
+    name: 'Veggie Pizza',
     price: 8.99,
-    imagePath: '//via.placeholder.com/300x200'
+    imagePath: 'http://localhost:3000/images/pizza.jpg'
+    // imagePath: '//via.placeholder.com/300x200'
   },
   {
     id: 3,
-    name: 'Some Item C',
+    name: 'BBQ Ribs',
     price: 7.99,
-    imagePath: '//via.placeholder.com/300x200'
+    imagePath: 'http://localhost:3000/images/ribs.jpg'
+    // imagePath: '//via.placeholder.com/300x200'
   },
   {
     id: 4,
-    name: 'Some Item D',
+    name: 'Ice Cream Sandwich',
     price: 6.99,
-    imagePath: '//via.placeholder.com/300x200'
+    imagePath: 'http://localhost:3000/images/ice_cream.jpg'
+
+    //  imagePath: '//via.placeholder.com/300x200'
   }
 ];
 
-let orderItems = [
-  {
-    id: 2,
-    name: 'Some Item B',
-    price: 8.99,
-    imagePath: '//via.placeholder.com/300x200'
-  },
-  {
-    id: 4,
-    name: 'Some Item D',
-    price: 6.99,
-    imagePath: '//via.placeholder.com/300x200'
-  }
-];
+let customerInfo1 = null;
 
-let customerInfo = {
-  id: 1,
-  name: 'Nestor Toro',
-  phone: '(650) 533-8676',
-  address: '123 Main Street, Oakland, CA'
+let orderItems = [];
+
+let onAddItem = function(itemId) {
+  // 1 check if the added itemId === any of the menuItems ID
+  // 2 if YES, then push it to the orderItems[].
+  orderItems.push(menuItems.find(menuItem => menuItem.id === itemId));
+
+  console.log('Order Length: ' + orderItems.length);
+
+  render();
 };
 
-ReactDOM.render(
-  <OrderPage //
-    menuItems={menuItems}
-    orderItems={orderItems}
-    customerInfo={customerInfo}
-  />,
-  document.getElementById('root')
-);
+let onSubmitOrderForm = function(customerInfo) {
+  console.log('SUBMIT!');
+  const name = customerInfo.name;
+  const phone = customerInfo.phone;
+  const address = customerInfo.address;
+  customerInfo1 = { name, phone, address };
+  render();
+};
+
+let onCloseOrderSuccessMessage = function() {
+  orderItems = [];
+  customerInfo1 = null;
+  console.log('INDEX ');
+  render();
+};
+
+function render() {
+  ReactDOM.render(
+    <OrderPage //
+      menuItems={menuItems}
+      orderItems={orderItems}
+      customerInfo={customerInfo1}
+      onAddItem={onAddItem}
+      onSubmitOrderForm={onSubmitOrderForm}
+      onCloseOrderSuccessMessage={onCloseOrderSuccessMessage}
+    />,
+    document.getElementById('root')
+  );
+}
+
+render();
+// ReactDOM.render(
+//   <OrderPage //
+//     menuItems={menuItems}
+//     onAddItem={onAddItem}
+//     orderItems={orderItems}
+//     customerInfo={customerInfo}
+//   />,
+//   document.getElementById('root')
+// );

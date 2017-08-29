@@ -20,5 +20,8 @@ function loadStories() {
 
   // 6 OrderPage
   require('../src/components/OrderPage.story');
+
+  // 7 OrderSuccessMessageComponent
+  require('../src/components/OrderSuccessMessageComponent.story');
 }
 configure(loadStories, module);

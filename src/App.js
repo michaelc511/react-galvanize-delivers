@@ -1,21 +1,60 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import OrderPage from './components/OrderPage';
+import getMenuItems from './requests/getMenuItems';
 
-class App extends Component {
+export default class App extends Component {
+  state = {
+    //array
+    customerInfo: null,
+    orderItems: [],
+    menuItems: null
+  }; // end of state
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <OrderPage
+        menuItems={this.state.menuItems}
+        orderItems={this.state.orderItems}
+        customerInfo={this.state.customerInfo}
+        onAddItem={this._addItem}
+        onSubmitOrderForm={this._submitOrderForm}
+        onCloseOrderSuccessMessage={this._closeOrderSuccessMessage}
+      />
     );
-  }
-}
+  } // end of render
 
-export default App;
+  ////FUNCTIONS /////////////////////////
+  componentDidMount() {
+    getMenuItems().then(menuItems => {
+      this.setState({
+        // array of Objects
+        menuItems
+      });
+    });
+  }
+
+  _submitOrderForm = ({ name, phone, address }) => {
+    this.setState({ customerInfo: { name, phone, address } });
+  };
+
+  _closeOrderSuccessMessage = () => {
+    this.setState({
+      orderItems: []
+    });
+
+    this.setState({
+      customerInfo: null
+    });
+  };
+
+  _addItem = itemId => {
+    this.setState(prevState => {
+      return {
+        orderItems: [
+          ...prevState.orderItems, //
+          prevState.menuItems.find(item => item.id === itemId)
+        ]
+      };
+    });
+  };
+}

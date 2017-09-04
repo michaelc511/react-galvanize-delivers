@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Burger N Fries",
+    "price": 9.99,
+    "imagePath": "http://localhost:3000/images/burger.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Veggie Pizza",
+    "price": 8.99,
+    "imagePath": "http://localhost:3000/images/pizza.jpg"
+  },
+  {
+    "id": 3,
+    "name": "BBQ Ribs",
+    "price": 7.99,
+    "imagePath": "http://localhost:3000/images/ribs.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Ice Cream Sandwich",
+    "price": 6.99,
+    "imagePath": "http://localhost:3000/images/ice_cream.jpg"
+  }
+]

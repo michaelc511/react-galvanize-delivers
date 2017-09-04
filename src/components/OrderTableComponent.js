@@ -10,7 +10,6 @@ export default function OrderTableComponent({ items }) {
   const tax = (0.085 * subTotal).toFixed(2);
 
   const total = (parseFloat(subTotal) + parseFloat(tax)).toFixed(2);
-  let i = 0;
 
   return (
     <table id="orderTable" className="striped OrderTableComponent">
@@ -21,11 +20,10 @@ export default function OrderTableComponent({ items }) {
         </tr>
       </thead>
       <tbody>
-        {items.map(item => {
-          i++;
+        {items.map((item, i) => {
           console.log('ITEM ID: ' + item.id + i);
           return (
-            <tr key={item.id + i}>
+            <tr key={i}>
               <td>
                 {item.name}
               </td>

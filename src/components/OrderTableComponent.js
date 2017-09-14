@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default function OrderTableComponent({ items }) {
+  console.log('ITEMS: ');
+  console.log(items);
+
   const subTotal = items
     .reduce(function(sum, item) {
       return (sum += item.price);
@@ -21,7 +24,7 @@ export default function OrderTableComponent({ items }) {
       </thead>
       <tbody>
         {items.map((item, i) => {
-          console.log('ITEM ID: ' + item.id + i);
+          console.log('ITEM ID....: ' + item.id + i);
           return (
             <tr key={i}>
               <td>

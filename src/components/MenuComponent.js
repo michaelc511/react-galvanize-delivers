@@ -20,6 +20,6 @@ export default function MenuComponent({ items, onAddItem }) {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <div>Loading...the stuff</div>;
   }
 }

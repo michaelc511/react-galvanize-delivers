@@ -32,9 +32,10 @@ export default function MenuItemComponent({ item, onAddItem }) {
         <p>
           {item.price && typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : 'N/A'}
         </p>
+        {/* <button className="card-content">Button test</button> */}
       </div>
       <div className="card-action">
-        <a href="." onClick={handleClick}>
+        <a className="menuChoice #fdd835 yellow darken-1 btn" href="." onClick={handleClick}>
           ADD TO ORDER
         </a>
       </div>

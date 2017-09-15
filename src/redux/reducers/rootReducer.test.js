@@ -75,7 +75,7 @@ describe('rootReducer', () => {
       orderItems: []
     };
 
-    // console.log('test');
+    ////console.log('test');
     // console.log(currentState);
     // console.log(rootReducer(currentState, action));
     // console.log('next');

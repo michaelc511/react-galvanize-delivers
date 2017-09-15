@@ -34,9 +34,6 @@ ShallowWrapper {
     <div
         className="card-action"
     >
-        <button>
-            Button test
-        </button>
         <a
             className="menuChoice #fdd835 yellow darken-1 btn"
             href="."
@@ -73,9 +70,6 @@ ShallowWrapper {
       <div
             className="card-action"
       >
-            <button>
-                  Button test
-            </button>
             <a
                   className="menuChoice #fdd835 yellow darken-1 btn"
                   href="."
@@ -102,7 +96,7 @@ ShallowWrapper {
         }
         onAddItem={[Function]}
 />,
-      "_debugID": 14,
+      "_debugID": 11,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -129,7 +123,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 2,
+      "_mountOrder": 1,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -162,9 +156,6 @@ ShallowWrapper {
           <div
                     className="card-action"
           >
-                    <button>
-                              Button test
-                    </button>
                     <a
                               className="menuChoice #fdd835 yellow darken-1 btn"
                               href="."
@@ -174,7 +165,7 @@ ShallowWrapper {
                     </a>
           </div>
 </div>,
-        "_debugID": 15,
+        "_debugID": 12,
         "_renderedOutput": <div
           className="card MenuItem MenuItemComponent"
 >
@@ -201,9 +192,6 @@ ShallowWrapper {
           <div
                     className="card-action"
           >
-                    <button>
-                              Button test
-                    </button>
                     <a
                               className="menuChoice #fdd835 yellow darken-1 btn"
                               href="."

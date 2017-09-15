@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getMenuItemProcess from './redux/thunks/getMenuItemsProcess';
 
 import OrderPage from './components/OrderPage';
 import getMenuItems from './requests/getMenuItems';
@@ -40,15 +41,16 @@ export default class App extends Component {
 
   ////FUNCTIONS /////////////////////////
   componentDidMount() {
-    getMenuItems().then(menuItems => {
-      // use 'store' to call 'dispatch'
-      //console.log(menuItems);
-      this.props.store.dispatch({ type: 'GET_MENU_ITEMS', menuItems });
-      // this.setState({
-      //   // array of Objects
-      //   menuItems
-      // });
-    });
+    this.props.store.dispatch(getMenuItemProcess());
+    // getMenuItems().then(menuItems => {
+    //   // use 'store' to call 'dispatch'
+    //   //console.log(menuItems);
+    //   this.props.store.dispatch({ type: 'GET_MENU_ITEMS', menuItems });
+    //   // this.setState({
+    //   //   // array of Objects
+    //   //   menuItems
+    //   // });
+    // });
   }
 
   _submitOrderForm = ({ name, phone, address }) => {

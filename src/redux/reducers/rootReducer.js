@@ -21,10 +21,9 @@ export default function rootReducer(
       //console.log('START_NEW_ORDER');
       return { ...currentState, orderItems: [], customerInfo: null };
     case 'ADD_ORDER_ITEM':
-      //console.log('ADD_ORDER_ITEM');
-      //console.log(action.payload);
-      //console.log(action.itemId2);
-      //console.log(currentState.orderItems);
+      // console.log('ADD_ORDER_ITEM');
+      // console.log('1' + action.itemId);
+      // console.log('2' + action.itemId2);
       return {
         ...currentState,
         orderItems: [

@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
 import App from './App';
 
-import setupStore from './redux/setupStore';
+// 4C
 
-const store = setupStore();
+// 1) REMOVE setupStore
+// 2)
+//import setupStore from './redux/setupStore';
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
+//const store = setupStore();
+
+//ReactDOM.render(<App store={store} />, document.getElementById('root'));
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // import OrderPage from './components/OrderPage';
 //
